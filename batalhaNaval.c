@@ -1,40 +1,54 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+// Desafio Batalha Naval - Nível Novato
+// O objetivo é posicionar dois navios (um horizontal e um vertical)
+// e exibir suas coordenadas no console.
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+    // --- 1. Entrada de Dados (Valores inseridos manualmente no código) ---
+    // Conforme o desafio, não pedimos dados ao usuário, definimos aqui.
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    // Definindo o primeiro navio (Horizontal)
+    // Este navio terá 3 partes.
+    // Posição inicial: (linha 2, coluna 1)
+    int navio1_linha_inicial = 2;
+    int navio1_coluna_inicial = 1;
+    int navio1_tamanho = 3;
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+    // Definindo o segundo navio (Vertical)
+    // Este navio terá 4 partes.
+    // Posição inicial: (linha 4, coluna 5)
+    int navio2_linha_inicial = 4;
+    int navio2_coluna_inicial = 5;
+    int navio2_tamanho = 4;
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    // --- 2. Exibição de Coordenadas ---
+    // O sistema deve exibir as coordenadas de cada parte dos navios.
+
+    printf("--- Coordenadas dos Navios Posicionados ---\n\n");
+
+    // Exibindo coordenadas do Navio 1 (Horizontal)
+    // Como ele é horizontal, a linha não muda, apenas a coluna.
+    printf("Navio 1 (Horizontal - %d partes):\n", navio1_tamanho);
+    for (int i = 0; i < navio1_tamanho; i++) {
+        // A linha é constante, a coluna aumenta a cada parte do navio.
+        int linha_atual = navio1_linha_inicial;
+        int coluna_atual = navio1_coluna_inicial + i;
+        printf("  - Parte %d: [Linha: %d, Coluna: %d]\n", i + 1, linha_atual, coluna_atual);
+    }
+
+    printf("\n"); // Adiciona um espaço para melhor visualização
+
+    // Exibindo coordenadas do Navio 2 (Vertical)
+    // Como ele é vertical, a coluna não muda, apenas a linha.
+    printf("Navio 2 (Vertical - %d partes):\n", navio2_tamanho);
+    for (int i = 0; i < navio2_tamanho; i++) {
+        // A coluna é constante, a linha aumenta a cada parte do navio.
+        int linha_atual = navio2_linha_inicial + i;
+        int coluna_atual = navio2_coluna_inicial;
+        printf("  - Parte %d: [Linha: %d, Coluna: %d]\n", i + 1, linha_atual, coluna_atual);
+    }
 
     return 0;
 }
